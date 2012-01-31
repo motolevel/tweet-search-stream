@@ -3,12 +3,34 @@
   License: New BSD License
 */
 
+@font-face {
+  font-family: 'KoushikiSans';
+  src: url(font/KoushikiSans-R.eot);
+}
+@font-face {
+	font-family: 'KoushikiSans';
+	src: local('KoushikiSans Regular'), local('KoushikiSans'),
+	url(font/KoushikiSans-R.otf) format('opentype');
+}
 body {
+	font: 14px/20px "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo","ＭＳ Ｐゴシック","MS PGothic",Helvetica,Arial,Sans-Serif;
+	color: #444;
   font-size: 95%;
+  background: url(https://twimg0-a.akamaihd.net/profile_background_images/138660567/bk.png) repeat-y top left;
 }
 
 h1 {
-  font-size: 150%;
+	font-family: 'KoushikiSans', 'serif' ;
+	font-size: 300%;
+	color: #fff100;
+	margin-top: 20px;
+	margin-bottom: 8px;
+}
+p#description {
+	font-family: 'KoushikiSans', 'serif' ;
+	font-size: 120%;
+	color: #fff100;
+	margin-top: 0px;
 }
 
 a {
@@ -24,7 +46,7 @@ img {
 }
 
 .page {
-  max-width: 700px;
+  max-width: 600px;
   /* centering */
   margin-left: auto;
   margin-right: auto;
@@ -42,15 +64,13 @@ img {
 .title {
   color: #000080;
 }
-
-.left-column {
-  float: left;
-  width: 150px;
-  overflow: hidden;
+#face {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 10;
 }
-
 .center-column {
-  margin-left: 170px;
   margin-right: 0px;
 }
 
@@ -65,10 +85,6 @@ img {
   overflow: hidden;
 }
 
-.ustream-right-column {
-  margin-left: 500px;
-  margin-right: 100px;
-}
 
 .video-container {
   overflow: hidden;
@@ -115,21 +131,28 @@ img {
 }
 
 .summary {
+	color: #ffffff;
+	padding: 0 0 6px;
 }
 
 .query {
   font-weight: bold;
 }
-
+.container {
+	width: 500px;
+	padding: 30px;
+	background: #ffffff;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 5px 0px #333; /* Safari, Chrome用 */
+	-moz-box-shadow: 0px 0px 5px 0px #333; /* Firefox用 */
+	box-shadow: 0px 0px 5px 0px #333; /* CSS3 */
+	behavior: url(ie-css3.htc);
+}
 .result-container {
-  margin-left: 170px;
-  <% if @webkit %>
     /* I'm not sure what's happening but this makes actual margin 0px in Chrome, probably
        because of existence of left-column. */
-    margin-right: -150px;
-  <% else %>
-    margin-right: 0px;
-  <% end %>
   margin-top: 8px;
   border-top: 1px solid silver;
   overflow: hidden;
